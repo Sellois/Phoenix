@@ -56,6 +56,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(b: Bundle?) { super.onCreate(b); setContent { MaterialTheme(colorScheme = darkColorScheme()) { App() } } }
 }
 
+@OptIn(ExperimentalFoundationApi::class)
 @Composable fun App() {
     val sp = LocalContext.current.getSharedPreferences("p", 0)
     var apps by remember { mutableStateOf(load(sp)) }
